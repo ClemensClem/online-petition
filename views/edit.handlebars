@@ -1,0 +1,128 @@
+<div class="body">
+<!--Header-->
+<header class="#">
+        <a href="/petition/thankyou"><strong><p>Your Signature</p></strong></a>
+        <p> | </p>
+        <a href="/logout"><strong><p>Logout</p></strong></a>
+</header>
+    <!--Main Content-->
+    <div class="headline">
+        <div class="headlineLeft">
+            <div class="headlinePadded">
+                <h1><strong>Keep Tortoises in the Fridge for Winter</strong></h1>
+            </div>
+        </div>    
+        <div class="headlineRight"></div>
+    </div>    
+    <div class="main">
+        <div class="mainLeft">
+            <div class="paddedTags">
+                <p><strong>The British Veterinary Association said: "Modern advice has moved away from the traditional idea of placing your tortoise in a shoebox in the attic."</strong></p>
+            </div>
+        </div>
+        <div class="mainMiddle"></div>
+        <div class="mainRight">
+                <div class="mainRightTopCall">
+                    <h3><strong>Edit your profile</strong></h3>
+                </div>
+            <div class="mainRightMiddle">
+                {{#if error}}
+                <p>So Sorry, something went wrong during updating you're profile, please try again or check your tortoise for frostbite and weight loss in the meantime.</p>
+                {{/if}}
+            </div>        
+            <div class="mainRightBottom">
+                
+                <form class ="editForm" action="" method="post">
+                    {{#profileData}}
+                    <!--Input field text First Name-->
+                    <div class="firstName">
+                        <input
+                            type="text"
+                            name="firstName"
+                            id="firstName"
+                            value="{{first}}"
+                            required
+                        />
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <!--Input field text last name-->
+                    <div class="lastName">
+                        <input
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            value="{{last}}"
+                            required
+                        />
+                        <label for="lastName">Last Name</label>
+                    </div>
+                    <!--Input field email address-->
+                    <div class="email">
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            value="{{email}}"
+                            required
+                        />
+                        <label for="email">E-mail Address</label>
+                    </div>
+                    <!--Input field password-->
+                    <div class="password">
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            value=""
+                        />
+                        <label for="password">Password</label>
+                    </div>
+                    <!--Input field age-->
+                    <div class="age">
+                        <input
+                            type="text"
+                            name="age"
+                            id="age"
+                            value="{{age}}"
+                        />
+                        <label for="age">Age</label>
+                    </div>
+                    <!--Input field city-->
+                    <div class="city">
+                        <input
+                            type="text"
+                            name="city"
+                            id="city"
+                            value="{{city}}"
+                        />
+                        <label for="city">City</label>
+                    </div>
+                    <!--Input field homepage-->
+                    <div class="homepage">
+                        <input
+                            type="url"
+                            name="homepage"
+                            id="homepage"
+                            value="{{homepage}}"
+                        />
+                        <label for="homepage">Homepage</label>
+                    </div>
+                    <!--Submit-->
+                    <button class="edit" name="edit" type="submit" value="Edit">Edit</button>
+                    {{/profileData}}
+                    <!--Hidden fields-->
+                    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+                </form>
+
+                {{#if closeAccount}}
+                <p>If you want to delete your account follow me <a href="/close-account">this way</a></p>
+                {{/if}}
+
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer>
+        <p>by Clemens</p>
+    </footer>
+</div>

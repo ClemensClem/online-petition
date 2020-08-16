@@ -1,0 +1,92 @@
+<div class="body">
+<!--Header-->
+<header class="#">
+        <a href="/login"><p><strong>Login</strong></p></a>
+</header>
+    <!--Main Content-->
+    <div class="headline">
+        <div class="headlineLeft">
+            <div class="headlinePadded">
+                <h1><strong>Keep Tortoises in the Fridge for Winter</strong></h1>
+            </div>
+        </div>    
+        <div class="headlineRight"></div>
+    </div>    
+    <div class="main">
+        <div class="mainLeft">
+            <div class="paddedTags">
+                <p><strong>"Tortoise experts say unseasonably warm weather has woken many of the reptiles early this year, endangering their lives and leaving their owners needing to keep them warm through any new cold snaps that could kill them. <br/>But there is a solution, keep them through the winter in the fridge!"</strong></p>
+            </div>
+        </div>
+        <div class="mainMiddle"></div>
+        <div class="mainRight">
+                <div class="mainRightTopCall">
+                    <h3><strong>Sign-up and Save a Tortoises Life...</strong></h3>
+                </div>
+            <div class="mainRightMiddle">
+                {{#if err}}
+                <p>So Sorry, something went wrong during registering, please try again or ask your local tortoise expert...</p>
+                {{/if}}
+            </div>        
+            <div class="mainRightBottom">
+                <form class ="registrationForm" action="" method="post">
+                    <!--Input field text First Name-->
+                    <div class="firstName">
+                        <input
+                            type="text"
+                            name="firstName"
+                            id="firstName"
+                            value=""
+                            required
+                        />
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <!--Input field text last name-->
+                    <div class="lastName">
+                        <input
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            value=""
+                            required
+                        />
+                        <label for="lastName">Last Name</label>
+                    </div>
+                    <!--Input field email address-->
+                    <div class="email">
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            value=""
+                            required
+                        />
+                        <label for="email">E-mail Address</label>
+                    </div>
+                    <!--Input field password-->
+                    <div class="password">
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            value=""
+                            required
+                        />
+                        <label for="password">Password</label>
+                    </div>
+                    <!--Hidden fields-->
+                    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+                    <!--Submit-->
+                    <button class="register" name="register" type="submit" value="Sign-up" >Sign up</button>
+                </form>
+                <p>
+                    You are with us already then please <a href="/login"><strong>login here</strong></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer>
+        <p>by Clemens</p>
+    </footer>
+</div>

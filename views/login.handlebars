@@ -1,0 +1,78 @@
+<div class="body">
+<!--Header-->
+<header class="#">
+    <a href="/register"><p><strong>Register</strong></p></a>
+</header>
+    <!--Main Content-->
+    <div class="headline">
+        <div class="headlineLeft">
+            <div class="headlinePadded">
+                <h1><strong>Keep Tortoises in the Fridge for Winter</strong></h1>
+            </div>
+        </div>    
+        <div class="headlineRight"></div>
+    </div>    
+    <div class="main">
+        <div class="mainLeft">
+            <div class="paddedTags">
+                <p><strong>"Tortoises hibernate through the winter but need to keep their body temperature between 3 and 5 degrees Celsius. <br/>If it rises above that, they wake up, begin digesting food and will die if the temperature falls again."</strong></p>
+            </div>
+        </div>
+        <div class="mainMiddle"></div>
+        <div class="mainRight">
+                <div class="mainRightTopCall">
+                    <h3><strong>Please login</strong></h3>
+                </div>
+            <div class="mainRightMiddle">
+                {{#if error}}
+                <p>So Sorry, something went wrong during login, please try again or ask your local tortoise expert...</p>
+                {{/if}}
+                 {{#if login}}
+                <p>You created an account already, please login with your existing account</p>
+                {{/if}}
+                {{#if noAuthentication}}
+                <p>You're password didn't match, please try again...</p>
+                {{/if}}
+                {{#if noUserExisting}}
+                <p>No user with such an e-mail existing. Please try again with another e-mail address or <a href="../register">register</a> a new account.</a></p>
+                {{/if}}
+            </div>        
+            <div class="mainRightBottom">
+                
+                <form class="loginForm" action="" method="post">
+                    <!--Input field email address-->
+                    <div class="email">
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            value=""
+                            required
+                        />
+                        <label for="email">E-mail</label>
+                    </div>
+                     <!--Input field password-->
+                    <div class="password">
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            value=""
+                            required
+                        />
+                        <label for="password">Password</label>
+                    </div>
+                <!--Hidden fields-->
+                <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+                <!--Submit-->
+                <button class="submitSignUp" name="login" type="submit" value="Login" >Login</button>
+            </form>
+
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer>
+        <p>by Clemens</p>
+    </footer>
+</div>

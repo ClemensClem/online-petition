@@ -1,0 +1,79 @@
+<div class="body">
+<!--Header-->
+<header class="#">
+        <a href="/profile/edit"><strong><p>Edit</p></strong></a>
+        <p> | </p>
+        <a href="/logout"><strong><p>Logout</p></strong></a>
+</header>
+    <!--Main Content-->
+    <div class="headline">
+        <div class="headlineLeft">
+            <div class="headlinePadded">
+                <h1><strong>Keep Tortoises in the Fridge for Winter</strong></h1>
+            </div>
+        </div>    
+        <div class="headlineRight"></div>
+    </div>    
+    <div class="main">
+        <div class="mainLeft">
+            <div class="paddedTags">
+                <p><strong>"Experts recommend using a new fridge with a reliable thermostat — and without a freezer compartment as fridges containing integral freezers can malfunction, freezing the whole unit and any tortoises within."</strong></p>
+            </div>
+        </div>
+        <div class="mainMiddle"></div>
+        <div class="mainRight">
+                <div class="mainRightTopCall">
+                    <h3><strong>Update your profile</strong></h3>
+                </div>
+            <div class="mainRightMiddle">
+                {{#if error}}
+                <p>So Sorry, something went wrong during updating you're profile, please try again... or call +44 1726 65670 for buying a tortoise</p>
+                {{/if}}
+            </div>        
+            <div class="mainRightBottom">
+                
+                <form class="profileForm" action="" method="post">
+                    <!--Input field age-->
+                    <div class="age">
+                        <input
+                            type="text"
+                            name="age"
+                            id="age"
+                            value=""
+                        />
+                        <label for="age">Age</label>
+                    </div>
+                    <!--Input field city-->
+                    <div class="city">
+                        <input
+                            type="text"
+                            name="city"
+                            id="city"
+                            value=""
+                        />
+                        <label for="city">City</label>
+                    </div>
+                    <!--Input field homepage-->
+                    <div class="homepage">
+                        <input
+                            type="url"
+                            name="homepage"
+                            id="homepage"
+                            value=""
+                        />
+                        <label for="homepage">Homepage</label>
+                    </div>
+                    <!--Hidden fields-->
+                    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+                    <!--Submit-->
+                    <button class="submitProfile" name="submitProfile" type="submit" value="SubmitProfile">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <footer>
+        <p>by Clemens</p>
+    </footer>
+</div>
